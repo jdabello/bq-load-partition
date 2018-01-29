@@ -22,12 +22,12 @@ do
         now=`date +"%Y%m%d" -d "$now + 1 day"`; 
         now_two=`date +"%Y,%m,%d" -d "$now"`; 
         partition="${partitioned_dataset}.${partitioned_table}\$${now}"
-        echo ${partition}
+        echo "Loading Partition: ${partition}"
         bq --nosync query --use_legacy_sql=false --allow_large_results --replace \
-		--noflatten_results --destination_table "'${partition}'" \
+		--noflatten_results --destination_table "${partition}" \
 		'select
 		*
 		from `'"${source_path}"'` 
-		where TIMESTAMP_TRUNC(TIMESTAMP(['"${source_table_date_field}"']), DAY)=TIMESTAMP(DATE('"$now_two"'));'
+		where TIMESTAMP_TRUNC(TIMESTAMP('"${source_table_date_field}"'), DAY)=TIMESTAMP(DATE('"${now_two}"'));'
 		sleep 0.6
 done  
