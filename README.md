@@ -35,7 +35,7 @@ source_table_date_field MM/DD/YYYY MM/DD/YYYY
 
 ### Delete Partitions
 
-Execute the bq-delete-partitions.sh script indicating the the destination dataset (partitioned_dataset), destination table (partitioned_table) and the date range to be deleted in MM/DD/YYYY format.
+To delete a range of partitiones execute the bq-delete-partitions.sh script indicating the the destination dataset (partitioned_dataset), destination table (partitioned_table) and the date range to be deleted in MM/DD/YYYY format.
 
 ```bash
 bq-delete-partitions.sh partitioned_dataset partitioned_table MM/DD/YYYY MM/DD/YYYY
