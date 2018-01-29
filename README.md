@@ -29,7 +29,8 @@ Where [DATASET] is an existing dataset in your project and [TABLE] is the name o
 Execute the bq-load-partition.sh script indicating the projectid, the source dataset, source table, the destination dataset (partitioned_dataset), destination table (partitioned_table), the date field on the source table (source_table_date_field) and the date range in MM/DD/YYYY format.
 
 ```bash
-bq-load-partition.sh project-id source_dataset source_table partitioned_dataset partitioned_table source_table_date_field MM/DD/YYYY MM/DD/YYYY
+bq-load-partition.sh project-id source_dataset source_table partitioned_dataset partitioned_table \
+source_table_date_field MM/DD/YYYY MM/DD/YYYY
 ```
 
 ### Delete Partitions
