@@ -2,10 +2,10 @@
 
 #e.g. bq-delete-partitions.sh partitioned_dataset partitioned_table 10/31/2017 11/30/2017
 
-partitioned_dataset=$1
-partitioned_table=$2
-from=$3 #MM/DD/YYYY
-to=$4 #MM/DD/YYYY
+partitioned_dataset=$1     #BigQuery Destination Dataset
+partitioned_table=$2       #BigQuery Destination Table (partitioned)
+from=$3 #MM/DD/YYYY        #Start date
+to=$4 #MM/DD/YYYY          #End date
 
 now=`date +"%Y%m%d" -d "${from}"` 
 end=`date +"%Y%m%d" -d "${to}"`
