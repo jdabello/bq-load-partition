@@ -13,8 +13,8 @@ from=$7 #MM/DD/YYYY
 to=$8 #MM/DD/YYYY
 source_path="${project}.${source_dataset}.${source_table}"
 
-now=`date +"%Y%m%d" -d "${7}"` 
-end=`date +"%Y%m%d" -d "${8}"`
+now=`date +"%Y%m%d" -d "${from}"` 
+end=`date +"%Y%m%d" -d "${to}"`
 
 
 while [ "$now" != "$end" ] ; 
