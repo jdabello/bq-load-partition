@@ -3,14 +3,14 @@
 #e.g. bq-load-partition.sh project-id source_dataset source_table partitioned_dataset partitioned_table source_table_date_field 10/31/2017 11/30/2017
 
 #Read parameters
-project=$1
-source_dataset=$2
-source_table=$3
-partitioned_dataset=$4
-partitioned_table=$5
-source_table_date_field=$6
-from=$7 #MM/DD/YYYY
-to=$8 #MM/DD/YYYY
+project=$1                 #GCP Project
+source_dataset=$2          #BigQuery Source Dataset
+source_table=$3            #BigQuery Source Table
+partitioned_dataset=$4     #BigQuery Destination Dataset
+partitioned_table=$5       #BigQuery Destination Table (partitioned)
+source_table_date_field=$6 #Date field on the source table that will be used to partition the table
+from=$7 #MM/DD/YYYY        #Start date
+to=$8 #MM/DD/YYYY          #End date
 source_path="${project}.${source_dataset}.${source_table}"
 
 now=`date +"%Y%m%d" -d "${from}"` 
